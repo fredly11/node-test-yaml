@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-test
+  labels:
+    app: node-test
+    service: node-test
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: node-test
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-test-v1
+  labels:
+    app: node-test
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-test
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: node-test
+        version: v1
+    spec:
+      containers:
+      - name: node-test
+        image: https://hub.docker.com/repository/docker/fredly11/node-test-1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
