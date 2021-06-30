@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: node-test
-        image: https://hub.docker.com/repository/docker/fredly11/node-test-1
+        image: https://hub.docker.com/repository/docker/fredly11/node-test-1:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
