@@ -31,12 +31,12 @@ spec:
         app: node-test
         version: v1
     spec:
-    serviceAccountName: node-test
-    containers:
-    - name: node-test
-      image: docker.io/fredly11/node-restart:latest
-      imagePullPolicy: IfNotPresent
-      ports:
-      - containerPort: 3000
-      securityContext:
-        runAsUser: 1000
+      serviceAccountName: node-test
+      containers:
+      - name: node-test
+        image: docker.io/fredly11/node-restart:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        securityContext:
+          runAsUser: 1000
