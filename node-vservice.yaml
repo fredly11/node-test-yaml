@@ -8,7 +8,10 @@ spec:
   gateways:
   - node-gateway
   http:
-    - route:
+  - match:
+    - uri:
+        exact: /node-test  
+    route:
     - destination:
         host: node-test
         port:
