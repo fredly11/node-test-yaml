@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: node-test
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - node-gateway
+  http:
+    route:
+    - destination:
+        host: node-test
+        port:
+          number: 9080
