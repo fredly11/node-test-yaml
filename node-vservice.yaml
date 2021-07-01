@@ -15,4 +15,4 @@ spec:
     - destination:
         host: node-test
         port:
-          number: 9080
+          number: 3000
