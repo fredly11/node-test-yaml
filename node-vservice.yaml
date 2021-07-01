@@ -8,7 +8,7 @@ spec:
   gateways:
   - node-gateway
   http:
-    route:
+    - route:
     - destination:
         host: node-test
         port:
