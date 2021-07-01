@@ -34,7 +34,7 @@ spec:
     serviceAccountName: node-test
       containers:
       - name: node-test
-        image: docker.io/fredly11/node-test-1:latest
+        image: docker.io/fredly11/node-restart:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
